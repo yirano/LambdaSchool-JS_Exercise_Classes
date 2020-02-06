@@ -172,8 +172,6 @@ class Student extends Lambdasian {
     this.favSubjects = obj.favSubjects;
   }
   listSubjects() {
-    let word = [];
-
     return this.favSubjects.map(x => {
       return x;
     });
