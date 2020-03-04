@@ -130,7 +130,6 @@ class Lambdasian {
 class Instructor extends Lambdasian {
   constructor(obj) {
     super(obj)
-    this.name = obj.name;
     this.speciality = obj.specialty;
     this.favLanguage = obj.favLanguage;
     this.catchPhrase = obj.catchPhrase;
@@ -161,7 +160,6 @@ class Instructor extends Lambdasian {
 class Student extends Lambdasian {
   constructor(obj) {
     super(obj)
-    this.name = obj.name;
     this.previousBackground = obj.previousBackground;
     this.className = obj.className;
     this.favSubjects = obj.favSubjects;
@@ -190,23 +188,31 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
+// class ProjectManager extends Instructor {
+//   constructor(obj) {
+//     super(obj);
+//     this.gradClassName = obj.gradClassName;
+//     this.favInstructor = obj.favInstructor;
+//   }
+//   standUp(slack) {
+//     return `${this.name} announces to ${slack}, @channel standy times!`
+//   }
+//   debugsCode(studentObject, subject) {
+//     return `${this.name} debugs ${studentObject.name}'s code on ${subject}`
+//   }
+// }
+
 class ProjectManager extends Instructor {
   constructor(obj) {
     super(obj);
-    this.name = obj.name;
-    this.speciality = obj.specialty;
-    this.favLanguage = obj.favLanguage;
-    this.catchPhrase = obj.catchPhrase;
     this.gradClassName = obj.gradClassName;
     this.favInstructor = obj.favInstructor;
   }
-  standUp(slack) {
-    console.log(`${this.name} announces to ${slack} @channel standy times!`);
-    return `${this.name} announces to ${slack} @channel standy times!`
+  standUp(channel) {
+    return `${this.name} announces to ${channel}, @channel standy times!}`;
   }
-  debugsCode(studentObject, subject) {
-    console.log(`${this.name} debugs ${studentObject.name}'s code on ${subject}`);
-    return `${this.name} debugs ${studentObject.name}'s code on ${subject}`
+  debugsCode(obj, subject) {
+    return `${this.name} debugs ${obj.name}'s code on ${subject}`;
   }
 }
 
